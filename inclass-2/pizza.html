@@ -1,0 +1,55 @@
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="pizza" content="pizza">
+	<script type="text/javascript">
+	function setwordDisappear(x)
+	{
+	  document.getElementById(x).value="";
+	  document.getElementById(x).style.color="#000000"
+	}
+	function checksomething(form)
+	{
+	  
+	  	form=document.getElementById('pizzaform');
+	    if(form.name.value=="") {alert("Please enter your name"); return false;}
+	    if(form.phone.value=="") {alert("Please enter your phone"); return false;}
+
+	    return true;
+	}
+    </script>
+</head>
+</head>
+
+<body>
+	<img src="http://img0.imgtn.bdimg.com/it/u=3125790614,494235520&fm=206&gp=0.jpg">
+	<form id="pizzaform" method="GET" action="formProcesor.html">
+		<p>Name:</p>
+		<p><input type="text" name="name" value="your name" style="color:#AAAAAA" id="input1" onfocus="setwordDisappear(this.id)" required></p>
+        <p>Phone Number: 123-123-1234</p>
+        <p><input type="tel" name="phone" value="123-123-1234" style="color:#AAAAAA" id="input2"  onfocus="setwordDisappear(this.id)"></p>
+        <p>Address:####Street Name</p>
+        <p><input type="text" name="address" value="####Street Name" style="color:#AAAAAA" id="input3" onfocus="setwordDisappear(this.id)"></p>
+        <p>Pizza Size:</p>
+        <p>
+        	<form>
+        		<label><input type="radio" name="size" value="" checked="checked">Large</label>
+        		<label><input type="radio" name="size" value="">Medium</label>
+        		<label><input type="radio" name="size" value="">Small</label>
+            </form>
+        </p>
+        <p>
+        	<form>
+        		<label><input type="checkbox" name="toppings" value="" checked="checked">Sausage</label>
+        		<label><input type="checkbox" name="toppings" value="">Pepperoni</label>
+        		<label><input type="checkbox" name="toppings" value="">Olives</label>
+        		<label><input type="checkbox" name="toppings" value="">Anchovis</label>
+        		<label><input type="checkbox" name="toppings" value="">Onions</label>
+            </form>
+        </p>   
+        <input type="submit" value="Submit!" onclick="return checksomething(this.parent)">
+
+    </form>
+</body>
+
+</html>
